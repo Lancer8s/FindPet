@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 20px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+header .nav-links a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+header .nav-links a:hover {
+    opacity: 0.85;
+}
+.btn-misavisos {
+    background-color: #28a745;
+}
+.btn-mapa {
+    background-color: #007bff;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+article.aviso-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+    border-left: 6px solid transparent;
+    overflow: hidden;
+}
+article.aviso-card:hover {
+    box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
+}
+article.aviso-card.red-border {
+    border-left-color: #dc3545;
+}
+article.aviso-card.green-border {
+    border-left-color: #28a745;
+}
+article.aviso-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #222;
+}
+article.aviso-card img {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+article.aviso-card p {
+    flex-grow: 1;
+    color: #555;
+    margin-bottom: 10px;
+}
+article.aviso-card .ubicacion {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+button.btn-whatsapp {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 10px;
+    border: none;
+    text-decoration: none;
+    background-color: #25d366;
+    color: white;
+}
+button.btn-whatsapp:hover {
+    background-color: #1da851;
+}
+a.btn-verdetalle {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+a.btn-verdetalle:hover {
+    background-color: #0056b3;
+}

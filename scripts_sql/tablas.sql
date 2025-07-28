@@ -1,0 +1,97 @@
+CREATE DATABASE FindPet;
+GO
+
+USE FindPet;
+GO
+
+-- -----------------------------------------------------
+-- Table USUARIO
+-- -----------------------------------------------------
+CREATE TABLE USUARIO (
+  id_usuario INT IDENTITY(1,1) NOT NULL,
+  nombre VARCHAR(100) NOT NULL,
+  correo VARCHAR(100) NOT NULL,
+  telefono VARCHAR(100) NOT NULL,
+  contrasenia VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id_usuario)
+)
+GO
+
+-- -----------------------------------------------------
+-- Table UBICACION
+-- -----------------------------------------------------
+CREATE TABLE UBICACION (
+  id_ubicacion INT IDENTITY(1,1) NOT NULL,
+  direccion VARCHAR(300) NOT NULL,
+  latitud DECIMAL(10,8) NOT NULL,
+  longitud DECIMAL(11,8) NOT NULL,
+  PRIMARY KEY (id_ubicacion)
+)
+GO
+
+-- -----------------------------------------------------
+-- Table AVISO
+-- -----------------------------------------------------
+CREATE TABLE AVISO (
+  id_aviso INT IDENTITY(1,1) NOT NULL,
+  nombre_mascota VARCHAR(100) NOT NULL,
+  descripcion VARCHAR(500) NOT NULL,
+  fecha_publicacion DATE NOT NULL,
+  urgente BIT NOT NULL DEFAULT 0,
+  estado_salud VARCHAR(300) NULL,
+  id_usuario INT NOT NULL,
+  id_ubicacion INT NOT NULL,
+  PRIMARY KEY (id_aviso),
+  FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (id_ubicacion) REFERENCES UBICACION(id_ubicacion)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
+GO
+
+-- -----------------------------------------------------
+-- Table AVISO_ADOPCION
+-- -----------------------------------------------------
+CREATE TABLE AVISO_ADOPCION (
+  id_adopcion INT IDENTITY(1,1) NOT NULL,
+  requisitos VARCHAR(300) NOT NULL,
+  donaciones BIT NOT NULL DEFAULT 0,
+  id_aviso INT NOT NULL,
+  PRIMARY KEY (id_adopcion),
+  FOREIGN KEY (id_aviso) REFERENCES AVISO(id_aviso)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
+GO
+
+-- -----------------------------------------------------
+-- Table AVISO_PERDIDA
+-- -----------------------------------------------------
+CREATE TABLE AVISO_PERDIDA (
+  id_perdida INT IDENTITY(1,1) NOT NULL,
+  fecha_perdida DATE NOT NULL,
+  id_aviso INT NOT NULL,
+  PRIMARY KEY (id_perdida),
+  FOREIGN KEY (id_aviso) REFERENCES AVISO(id_aviso)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
+GO
+
+-- -----------------------------------------------------
+-- Table IMAGEN
+-- -----------------------------------------------------
+CREATE TABLE IMAGEN (
+  id_imagen INT IDENTITY(1,1) NOT NULL,
+  ruta VARCHAR(300) NOT NULL,
+  nombre_imagen VARCHAR(100) NOT NULL,
+  tipo VARCHAR(100) NOT NULL,
+  id_aviso INT NOT NULL,
+  PRIMARY KEY (id_imagen),
+  FOREIGN KEY (id_aviso) REFERENCES AVISO(id_aviso)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
+GO

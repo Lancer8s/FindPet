@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 20px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.nuevo-aviso-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+.nuevo-aviso-link:hover {
+    background-color: #218838;
+}
+form button {
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+form button:hover {
+    background-color: #b02a37;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+article.aviso-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: box-shadow 0.3s ease;
+    border-left: 6px solid transparent;
+}
+article.aviso-card:hover {
+    box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
+}
+article.aviso-card.red-border {
+    border-left-color: #dc3545;
+}
+article.aviso-card.green-border {
+    border-left-color: #28a745;
+}
+article.aviso-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #222;
+}
+article.aviso-card img {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+article.aviso-card p {
+    color: #555;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+a.btn-verdetalle {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+a.btn-verdetalle:hover {
+    background-color: #0056b3;
+}
+a.btn-editar {
+  display: block;
+  background-color: #fd7e14;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+a.btn-editar:hover {
+  background-color: #e8590c;
+}
+
