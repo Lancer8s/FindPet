@@ -17,11 +17,10 @@
 ## 🛠️ Instalación  
 
 ### 1. Clonar el repositorio  
-```bash
-git clone https://github.com/tu-usuario/findpet.git
-cd findpet
+- git clone https://github.com/tu-usuario/findpet.git
+- cd findpet
 
-### 2. Crear la base de datos y el usuario en SQL Server
+### 2. Crear el usuario en SQL Server
 -- Crear el login y el usuario
 CREATE LOGIN pet WITH PASSWORD = 'publica';
 CREATE USER pet FOR LOGIN pet;
@@ -30,16 +29,13 @@ CREATE USER pet FOR LOGIN pet;
 ALTER ROLE db_owner ADD MEMBER pet;
 
 ### 4. Habilitar extensiones de SQL Server en PHP
-Abre el archivo php.ini (desde el panel de XAMPP haz clic en “Config” > “php.ini”) y asegúrate de descomentar las siguientes líneas (quita el ; si lo tiene):
-
-extension=php_pdo_sqlsrv
-extension=php_sqlsrv
+- Abre el archivo php.ini (desde el panel de XAMPP haz clic en “Config” > “php.ini”)
+- Asegúrate de que esten las siguientes líneas (quita el ; si lo tiene):
+    extension=php_pdo_sqlsrv
+    extension=php_sqlsrv
 
 ### 5. Cómo ejecutar el sistema
-Ejecuta los scripts sql de la carpeta FindPet/sqcripts_sql en SQLServer
-
-Abre XAMPP y enciende el módulo Apache.
-
-En tu navegador, accede al archivo principal de la aplicación:
-
-http://localhost/FindPet/views/home.php
+- Ejecuta los scripts sql de la carpeta FindPet/sqcripts_sql en SQLServer
+- Abre XAMPP y enciende el módulo Apache.
+- En tu navegador, accede al archivo principal de la aplicación:
+    http://localhost/FindPet/views/home.php
