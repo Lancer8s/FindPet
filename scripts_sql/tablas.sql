@@ -4,9 +4,6 @@ GO
 USE FindPet;
 GO
 
--- -----------------------------------------------------
--- Table USUARIO
--- -----------------------------------------------------
 CREATE TABLE USUARIO (
   id_usuario INT IDENTITY(1,1) NOT NULL,
   nombre VARCHAR(100) NOT NULL,
@@ -17,9 +14,6 @@ CREATE TABLE USUARIO (
 )
 GO
 
--- -----------------------------------------------------
--- Table UBICACION
--- -----------------------------------------------------
 CREATE TABLE UBICACION (
   id_ubicacion INT IDENTITY(1,1) NOT NULL,
   direccion VARCHAR(300) NOT NULL,
@@ -29,9 +23,6 @@ CREATE TABLE UBICACION (
 )
 GO
 
--- -----------------------------------------------------
--- Table AVISO
--- -----------------------------------------------------
 CREATE TABLE AVISO (
   id_aviso INT IDENTITY(1,1) NOT NULL,
   nombre_mascota VARCHAR(100) NOT NULL,
@@ -51,9 +42,6 @@ CREATE TABLE AVISO (
 )
 GO
 
--- -----------------------------------------------------
--- Table AVISO_ADOPCION
--- -----------------------------------------------------
 CREATE TABLE AVISO_ADOPCION (
   id_adopcion INT IDENTITY(1,1) NOT NULL,
   requisitos VARCHAR(300) NOT NULL,
@@ -66,9 +54,6 @@ CREATE TABLE AVISO_ADOPCION (
 )
 GO
 
--- -----------------------------------------------------
--- Table AVISO_PERDIDA
--- -----------------------------------------------------
 CREATE TABLE AVISO_PERDIDA (
   id_perdida INT IDENTITY(1,1) NOT NULL,
   fecha_perdida DATE NOT NULL,
@@ -80,9 +65,6 @@ CREATE TABLE AVISO_PERDIDA (
 )
 GO
 
--- -----------------------------------------------------
--- Table IMAGEN
--- -----------------------------------------------------
 CREATE TABLE IMAGEN (
   id_imagen INT IDENTITY(1,1) NOT NULL,
   ruta VARCHAR(300) NOT NULL,
